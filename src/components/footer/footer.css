@@ -1,0 +1,41 @@
+.footer{
+    display: flex;
+    background:#32cd32;
+    color: #fff;
+
+    
+   
+    
+}
+.footerListItems{
+    list-style: none;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+    
+}
+.ShdfHome{
+flex: 3;
+
+}
+.AboutUs{
+    flex: 3;
+}
+.education{
+    flex: 3;
+}
+.contact{
+    flex: 3;
+}
+.footericon{
+    padding: 20px;
+}
+.contact a{
+    color: #fff ;
+
+}
+    .contact a:hover{
+color: #e34e09;
+font-size: 20px;
+font-weight: bolder;
+    }
