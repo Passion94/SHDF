@@ -1,0 +1,8 @@
+.PostDesc:first-letter{
+    font-size: 30px;
+    font-weight: 600;
+}
+.PostDesc{
+    color: #666;
+    line-height: 25px;
+}

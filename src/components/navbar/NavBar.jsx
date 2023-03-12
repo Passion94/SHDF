@@ -1,60 +1,99 @@
 
-import React from 'react';
-import './navbar.css';
-import {Link, Outlet} from 'react-router-dom'
+import {AppBar, Toolbar,styled,Box, Typography,InputBase,Menu, MenuItem } from "@mui/material"
+import {Facebook, Instagram, Menu as MenuIcon, Search, Twitter} from '@mui/icons-material'
+import React, { useState } from 'react'
+import { Link } from "react-router-dom"
 
-export default function NavBar() {
-  const user=false;
-  return (
-    <div className='navbar_container'>
-    <div className='empty'></div>
+
+const NavBar = () => {
+    const StyledToolbar = styled(Toolbar)({
+        display:"flex",
+        justifyContent:"space-between"
+      });
+      const SocialBox = styled (Box)({
+        display:'flex',
+        gap:10
+      })
+      const MenuBox =styled(Box)({
+        display:'Flex',
+        gap: 30,
+      });
+      const SearchBox =styled(Box)({
+        display:'Flex',
+        gap: 5,
+        alignItems:"center",
+        color:'white'
+        
+      });
+      const MenuItems=[
+        {Id:1, Name:"Home", link:"/"},
+        {Id:2, Name:"About Us", link:"/everyabout"},
+        {Id:3, Name:"Portfolio", link:"#"},
+        {Id:3, Name:"Blog", link:"/blog"},
+        {Id:4, Name:"Contact Us", link:"#"},
+      ]
     
-    <div className='navbar'>
-{/* <div className='left_nav'>
-
-<i className="top_icon fa-brands fa-facebook"></i>
-<i className="top_icon fa-brands fa-linkedin-in"></i>
-<i className="top_icon fa-brands fa-twitter"></i>
-<i className="top_icon fa-brands fa-medium_i"></i>
-</div> */}
+      const [open,SetOpen]=useState(false);
+      return (
+        <AppBar sx={{background:'black', position:'static'}}><StyledToolbar> 
+        <SocialBox sx={{cursor:'pointer'}}>
+       <Facebook/>
+       <Instagram/>
+       <Twitter/>
+        </SocialBox>
+        <MenuBox sx={{display:{xs:'none',
+        sm:'none', 
+        md:'flex',
+         lg:'flex'}}}
+         >
+      {MenuItems.map((item)=>(
+        <Typography sx={{cursor:'pointer', fontSize:'14px'}}>{item.Name}</Typography>
+      ))}
       
-    <div className='left_nav'>
-<ul className='top_list'>
-<li className='top_list_items'><Link to='/whatwedo' className='navbarroutelink'>WHAT WE DO </Link></li>
-<li className='top_list_items'> <Link to='/aboutshdf'  className='navbarroutelink'>RESEARCH AND PROJECTS</Link></li>
-<li className='top_list_items'>  <Link to='/single' className='navbarroutelink' >STORIES</Link> </li>
-<li className='top_list_items'>  <Link to='/aboutshdf' className='navbarroutelink' >ABOUT SDHF</Link></li>
-<li className='top_list_items'>  <Link to='/faqs' className='navbarroutelink' >FAQS</Link></li>
-<li className='top_list_items'> <Link to='/login' className='navbarroutelink'>{!user && 'GET INVOLVED'}</Link></li>
-<li className='top_list_items'> <Link to='/write' className='navbarroutelink'>{user && 'WRITE'}</Link></li>
-<li className='top_list_items'> <Link to='/settings' className='navbarroutelink'>{user && 'SETTINGS'}</Link></li>
-
-    
-<Outlet></Outlet>
- 
    
+      
+          
+       
+       </MenuBox>
+        <SearchBox><Search/><InputBase placeholder="Search...." sx={{color:'white'}}/></SearchBox>
+        <MenuIcon sx={{ display:{xs:'block',
+        sm:'block',
+         md:'none', 
+         lg:'none',
+         cursor:'pointer'} }}
+         onClick={()=> SetOpen(!open)}
+         
+         />
+        </StyledToolbar>
+        <Menu
+            id="demo-positioned-menu"
+            aria-labelledby="demo-positioned-button"
+           
+            open={open}
+            onClose={()=>SetOpen(!open)}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+          >
+          <Box sx={{width:350, height:"90vh"}}>
     
-</ul>
-
-
-      </div>
-      <div className='center_nav'>
-      
-   
-      <i className="top_search_icon fa-solid fa-magnifying-glass"></i>
-      <Link to='login'>
-      {!user &&  <button className='navLogin'>LOGIN</button>  }
-
-      </Link>
-      
-      <Link to='register'>
-      {!user &&  <button className='navSignup'>SIGNUP</button>  }
-      
-      </Link>
-      
-     
-      </div>
-    </div>
-    </div>
-  )
+          {MenuItems.map((item)=>(
+            <MenuItem sx={{cursor:'pointer', fontSize:'14px'}}>{item.Name}</MenuItem>
+          ))}
+        
+          </Box>
+            
+           
+            
+          </Menu>
+        </AppBar>
+        
+      )
 }
+
+export default NavBar;
