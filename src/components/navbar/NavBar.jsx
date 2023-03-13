@@ -2,7 +2,7 @@
 import {AppBar, Toolbar,styled,Box, Typography,InputBase,Menu, MenuItem } from "@mui/material"
 import {Facebook, Instagram, Menu as MenuIcon, Search, Twitter} from '@mui/icons-material'
 import React, { useState } from 'react'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -25,30 +25,34 @@ const NavBar = () => {
         color:'white'
         
       });
+      const StyledLink=styled(Link)({
+        textDecoration:'none',
+        color:'white'
+      })
       const MenuItems=[
         {Id:1, Name:"Home", link:"/"},
         {Id:2, Name:"About Us", link:"/everyabout"},
-        {Id:3, Name:"Portfolio", link:"#"},
-        {Id:3, Name:"Blog", link:"/blog"},
-        {Id:4, Name:"Contact Us", link:"#"},
+        {Id:3, Name:"Portfolio", link:"/b"},
+        {Id:4, Name:"Blog", link:"/blog"},
+        {Id:5, Name:"Contact Us", link:"/a"},
       ]
     
       const [open,SetOpen]=useState(false);
       return (
         <AppBar sx={{background:'black', position:'static'}}><StyledToolbar> 
         <SocialBox sx={{cursor:'pointer'}}>
-       <Facebook/>
-       <Instagram/>
-       <Twitter/>
+       <a style={{color:'white'}} href="https://www.facebook.com/SusewFoundation/https://www.facebook.com/SusewFoundation/"><Facebook/></a>
+       <a style={{color:'white'}} href="https://twitter.com/Susewfoundation?t=9wbYtaUFN5LTLud43rpp9Q&s=09"> <Twitter/></a>
+       
         </SocialBox>
         <MenuBox sx={{display:{xs:'none',
         sm:'none', 
         md:'flex',
          lg:'flex'}}}
          >
-      {MenuItems.map((item)=>(
-        <Typography sx={{cursor:'pointer', fontSize:'14px'}}>{item.Name}</Typography>
-      ))}
+      {MenuItems.map((item, index) =>
+       <StyledLink to={item.link}>{item.Name}</StyledLink> 
+      )}
       
    
       
@@ -80,7 +84,7 @@ const NavBar = () => {
               horizontal: 'right',
             }}
           >
-          <Box sx={{width:350, height:"90vh"}}>
+          <Box sx={{width:350, height:"50vh"}}>
     
           {MenuItems.map((item)=>(
             <MenuItem sx={{cursor:'pointer', fontSize:'14px'}}>{item.Name}</MenuItem>
