@@ -23,8 +23,8 @@ const Footer = () => {
         
     })
   return (
-    <Box bgcolor={'#32CD32'} sx={{height:"200px"}} pb={5}>
-      <Stack direction={{xs:'colmun', sm:'row', md:'row'}} p={7} bgcolor={'black'} sx={{height:"100px"}}  >
+    <Box bgcolor={'#32CD32'} sx={{height:"150px"}} pb={5}>
+      <Stack direction={{xs:'row', sm:'row', md:'row'}} p={{xs:'2', sm:'5', md:'7'}} bgcolor={'black'} sx={{height:"130px", marginTop:'10px', paddingTop:'20px'}}  >
       <Box flex={1}>
     
         <ListTypography  align={'center'}>
@@ -64,11 +64,11 @@ const Footer = () => {
         Men
          </ListTypography>
       </Box>
-      <Box> 
+      <Box flex={1}> 
       <ListTypography align={'center'}>
        Follows us 
          </ListTypography>
-         <SocialBox sx={{cursor:'pointer'}} align={'center'}>
+         <SocialBox sx={{cursor:'pointer'}} align={'center'} >
        <Facebook/>
        <Instagram/>
        <Twitter/>
@@ -76,7 +76,10 @@ const Footer = () => {
       </Box>
       
        </Stack>
-       <ListTypography align={'center'}>© 2023 SHDF, Inc.</ListTypography>
+       <Box>
+       <ListTypography sx={{display:'flex', alignItems:'center', justifyContent:'center', margin:'20 20',padding:'auto'}}>© 2023 SHDF, Inc.</ListTypography>
+       </Box>
+       
     </Box>
   )
 }

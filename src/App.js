@@ -37,12 +37,12 @@ export default function App() {
    <BrowserRouter>
    <Header/>
     <Navbar/>
-    <Contact/>
     <Routes>
 
     <Route path='/' element={<Home/>}/>
     <Route path='/everyabout' element={<Everyabout/>}/>
     <Route path='/blog' element={<Blog/>}/>
+    <Route path='/contact' element={<Contact/>}/>
     
     </Routes>
     <Footer/>

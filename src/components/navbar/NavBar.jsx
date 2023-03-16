@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
+
     const StyledToolbar = styled(Toolbar)({
         display:"flex",
         justifyContent:"space-between"
@@ -27,14 +28,18 @@ const NavBar = () => {
       });
       const StyledLink=styled(Link)({
         textDecoration:'none',
-        color:'white'
+        color:'white',
+        fontFamily: 'Montserrat',
+        fontSize:'16px',
+        fontWeight:'600'
       })
+     
       const MenuItems=[
         {Id:1, Name:"Home", link:"/"},
         {Id:2, Name:"About Us", link:"/everyabout"},
-        {Id:3, Name:"Portfolio", link:"/b"},
+        {Id:3, Name:"Projects", link:"/b"},
         {Id:4, Name:"Blog", link:"/blog"},
-        {Id:5, Name:"Contact Us", link:"/a"},
+        {Id:5, Name:"Contact Us", link:"/contact"},
       ]
     
       const [open,SetOpen]=useState(false);
@@ -51,7 +56,7 @@ const NavBar = () => {
          lg:'flex'}}}
          >
       {MenuItems.map((item, index) =>
-       <StyledLink to={item.link}>{item.Name}</StyledLink> 
+       <StyledLink key={index} to={item.link}>{item.Name}</StyledLink> 
       )}
       
    
@@ -72,7 +77,7 @@ const NavBar = () => {
         <Menu
             id="demo-positioned-menu"
             aria-labelledby="demo-positioned-button"
-           
+           sx={{marginTop:'140px'}}
             open={open}
             onClose={()=>SetOpen(!open)}
             anchorOrigin={{
@@ -84,10 +89,11 @@ const NavBar = () => {
               horizontal: 'right',
             }}
           >
-          <Box sx={{width:350, height:"50vh"}}>
+          <Box sx={{width:350, height:"50vh"}} >
     
           {MenuItems.map((item)=>(
-            <MenuItem sx={{cursor:'pointer', fontSize:'14px'}}>{item.Name}</MenuItem>
+            <MenuItem sx={{cursor:'pointer', fontSize:'14px'}}><StyledLink sx={{color:'black'}} to={item.link} >{item.Name}</StyledLink></MenuItem>
+            
           ))}
         
           </Box>
