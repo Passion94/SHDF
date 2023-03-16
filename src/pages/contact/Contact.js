@@ -86,7 +86,7 @@ type='text'
     08066685798
     </Typography>
      </Button>
-   <Button startIcon={<Email/>} sx={{color:'white'}}href="mailto:name@email.com"> <Typography sx={{color:'#e5e4e2'}}> Susewhumandevelopment@gmail.com</Typography></Button>
+   <Button startIcon={<Email/>} sx={{color:'white'}} href="mailto:name@email.com"> <Typography sx={{color:'#e5e4e2'}}> Susewhumandevelopment@gmail.com</Typography></Button>
    </Stack>
   
   

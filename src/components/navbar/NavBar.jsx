@@ -37,14 +37,14 @@ const NavBar = () => {
       const MenuItems=[
         {Id:1, Name:"Home", link:"/"},
         {Id:2, Name:"About Us", link:"/everyabout"},
-        {Id:3, Name:"Projects", link:"/b"},
+        {Id:3, Name:"Projects", link:"/project"},
         {Id:4, Name:"Blog", link:"/blog"},
         {Id:5, Name:"Contact Us", link:"/contact"},
       ]
     
       const [open,SetOpen]=useState(false);
       return (
-        <AppBar sx={{background:'black', position:'static'}}><StyledToolbar> 
+        <AppBar sx={{background:'black', position:'sticky'}}><StyledToolbar> 
         <SocialBox sx={{cursor:'pointer'}}>
        <a style={{color:'white'}} href="https://www.facebook.com/SusewFoundation/https://www.facebook.com/SusewFoundation/"><Facebook/></a>
        <a style={{color:'white'}} href="https://twitter.com/Susewfoundation?t=9wbYtaUFN5LTLud43rpp9Q&s=09"> <Twitter/></a>

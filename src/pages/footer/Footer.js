@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { Box, Stack, Typography } from '@mui/material'
 import {Facebook, Instagram,  Twitter} from '@mui/icons-material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 const Footer = () => {
@@ -22,56 +23,45 @@ const Footer = () => {
         
         
     })
+    const ContactItems=[
+      {Id:1, Name:"Contact Us", link:"/contact"},
+      {Id:2, Name:"About Us", link:"/everyabout"},
+      {Id:3, Name:"Volunteer", link:"/contact"}
+    ]
+    const ActivityItems=[
+      {Id:1, Name:"Activities", link:"/project"},
+      {Id:2, Name:"Projects", link:"/project"},
+      {Id:3, Name:"Blog", link:"/blog"}
+    ]
+    const StyledLink=styled(Link)({
+      textDecoration:'none',
+      color:'white',
+      fontFamily: 'Montserrat',
+    })
   return (
     <Box bgcolor={'#32CD32'} sx={{height:"150px"}} pb={5}>
       <Stack direction={{xs:'row', sm:'row', md:'row'}} p={{xs:'2', sm:'5', md:'7'}} bgcolor={'black'} sx={{height:"130px", marginTop:'10px', paddingTop:'20px'}}  >
       <Box flex={1}>
-    
-        <ListTypography  align={'center'}>
-        Contact Us
-         </ListTypography>
-         <ListTypography  align={'center'}>
-        About Us
-         </ListTypography>
-         <ListTypography  align={'center'}>
-        Volunteer
-         </ListTypography>
+      {ContactItems.map((item, index) =>
+     <StyledLink key={index} to={item.link}><ListTypography align={'center'} >{item.Name}</ListTypography></StyledLink>
+      )}
+       
       </Box>
       <Box flex={1}>
      
-        <ListTypography  align={'center'}>
-        Activities
-         </ListTypography>
-         <ListTypography  align={'center'}>
-        Projects
-         </ListTypography>
-         <ListTypography  align={'center'}>
-        Fashion bouquet
-         </ListTypography>
+      {ActivityItems.map((item, index) =>
+     <StyledLink key={index} to={item.link}><ListTypography align={'center'} >{item.Name}</ListTypography></StyledLink>
+      )}
       </Box>
-      <Box flex={1}>
       
-      <ListTypography  align={'center'}>
-        Categories
-         </ListTypography>
-        <ListTypography  variant={'body2'} align={'center'}>
-        Kids
-         </ListTypography>
-         <ListTypography  variant={'body2'} align={'center'}>
-        Women
-         </ListTypography>
-         <ListTypography  variant={'body2'} align={'center'}>
-        Men
-         </ListTypography>
-      </Box>
       <Box flex={1}> 
       <ListTypography align={'center'}>
        Follows us 
          </ListTypography>
          <SocialBox sx={{cursor:'pointer'}} align={'center'} >
-       <Facebook/>
-       <Instagram/>
-       <Twitter/>
+         <a style={{color:'white'}} href="https://www.facebook.com/SusewFoundation/https://www.facebook.com/SusewFoundation/" target="blank"> <Facebook/></a>
+       <a style={{color:'white'}} href="https://twitter.com/Susewfoundation?t=9wbYtaUFN5LTLud43rpp9Q&s=09" target="blank"><Instagram /></a>
+       <a style={{color:'white'}} href="#" target="blank"> <Twitter/></a>
         </SocialBox>
       </Box>
       

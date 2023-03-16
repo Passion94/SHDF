@@ -14,6 +14,7 @@ import Blog from './pages/blog/Blog';
 
 import Everyabout from './pages/about/Everyabout';
 import Contact from './pages/contact/Contact';
+import Project from './pages/project/Project';
 
 
 
@@ -43,6 +44,7 @@ export default function App() {
     <Route path='/everyabout' element={<Everyabout/>}/>
     <Route path='/blog' element={<Blog/>}/>
     <Route path='/contact' element={<Contact/>}/>
+    <Route path='/project' element={<Project/>}/>
     
     </Routes>
     <Footer/>

@@ -23,7 +23,7 @@ const Header = () => {
     
       return (
         
-        <Container maxWidth={false} sx={{background:'#32CD32', position:'sticky',
+        <Container maxWidth={false} sx={{background:'#32CD32', position:'',
         color:'white', height:'100px', Width :'100vh', cursor: 'pointer'}}>
         
         <StyledToolbar> 
