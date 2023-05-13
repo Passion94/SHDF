@@ -10,7 +10,7 @@ const Card = () => {
         component="img"
         alt="Ankara"
         height="100%"
-        image="https://informate.ng/wp-content/uploads/2021/08/pexels-rodnae-productions-6192165-1.jpg"
+        image="https://thumbs.dreamstime.com/b/black-woman-hands-planting-soil-agriculture-sustainability-care-future-growth-planning-climate-change-support-zoom-farmer-268609169.jpg"
       />
       <CardContent>
       <Typography  sx={{display:'flex', justifyContent:'center', gap:'35px'}} >
